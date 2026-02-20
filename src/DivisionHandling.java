@@ -1,17 +1,21 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-
         try {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+
             int result = a / b;
             System.out.println(result);
+
         } catch (ArithmeticException e) {
             System.out.println("Divide by zero error");
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input");
         }
 
         sc.close();
